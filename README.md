@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Yakub Jewellers — website
 
-## Getting Started
+Next.js 16 (App Router, Turbopack) + Tailwind CSS 4. A single, mobile-first landing page for Yakub Jewellers — Tanzanite, gold and silver jewellery.
 
-First, run the development server:
+## Run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build && npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To preview on a phone on the same Wi-Fi: `npm run dev -- -H 0.0.0.0`, then open `http://<your-computer-ip>:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Where to edit
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| What | File |
+| --- | --- |
+| Phone, WhatsApp number, showroom address | `lib/site.ts` |
+| Products (name, category, photo, best seller) | `lib/products.ts` |
+| Product photos | `public/images/products/` |
+| Colours & fonts | `app/globals.css` (`@theme`) and `app/layout.tsx` |
+| Page sections | `components/sections/*` (order set in `app/page.tsx`) |
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Every product card and call-to-action opens WhatsApp with a pre-written message naming the piece, so no prices are shown on the site. Set `address` in `lib/site.ts` and the Visit section shows it in place of "Call or WhatsApp us for directions".
